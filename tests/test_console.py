@@ -63,7 +63,6 @@ class TestHBNBCommand(unittest.TestCase):
         except IOError:
             pass
 
-
     def test_emptyline(self):
         """Test empty line input."""
         with patch("sys.stdout", new=StringIO()) as f:
@@ -79,7 +78,7 @@ class TestHBNBCommand(unittest.TestCase):
     def test_EOF(self):
         """Test that EOF quits."""
         with patch("sys.stdout", new=StringIO()) as f:
-            self.assertTrue(self.HBNB.onecmd("EOF"))
+            self.assertTrue(self.HBNB.do_EOF("EOF"))
 
     def test_create_errors(self):
         """Test create command errors."""
