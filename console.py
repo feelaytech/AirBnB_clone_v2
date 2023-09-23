@@ -94,7 +94,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, command):
         """ Method to exit the HBNB console"""
-        exit()
+        return True
 
     def help_quit(self):
         """ Prints the help documentation for quit  """
@@ -102,8 +102,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_EOF(self, arg):
         """ Handles EOF to exit program """
-        print()
-        exit()
+        sys.stdout.write("\n")
+        return True
 
     def help_EOF(self):
         """ Prints the help documentation for EOF """
@@ -158,15 +158,15 @@ class HBNBCommand(cmd.Cmd):
 
         if not c_name:
             print("** class name missing **")
-            return
+            return False
 
         if c_name not in HBNBCommand.classes:
             print("** class doesn't exist **")
-            return
+            return False
 
         if not c_id:
             print("** instance id missing **")
-            return
+            return False
 
         key = c_name + "." + c_id
         try:
