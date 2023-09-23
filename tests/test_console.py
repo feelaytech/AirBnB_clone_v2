@@ -253,7 +253,8 @@ class TestHBNB_update_command(unittest.TestCase):
 
     # Tests that an error message is printed when update
     #  is used without class id.
-    """ @unittest.skipIf(type(models.storage) == DBStorage, "Testing DBStorage")
+    """ @unittest.skipIf(type(models.storage) == DBStorage,
+    "Testing DBStorage")
     def test_update_missing_id(self):
         expected = "** instance id missing **"
         with patch("sys.stdout", new=StringIO()) as f:
