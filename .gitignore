@@ -1,5 +1,6 @@
-# Ignore __pycache__ folder and all its contents as well as file.json
+# Ignore the listed files & folders and all their contents.
 __pycache__/
+versions/
 file.json
 main_base_model.py
 test_save_reload_base_model.py
