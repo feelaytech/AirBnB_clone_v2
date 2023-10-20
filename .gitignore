@@ -5,3 +5,9 @@ file.json
 main_base_model.py
 test_save_reload_base_model.py
 test_save_reload_user.py
+mysqldb.sh
+virt/
+7-dump.sql
+10-dump.sql
+100-dump.sql
+.vscode/
