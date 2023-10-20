@@ -37,9 +37,11 @@ class DBStorage:
             Base.metadata.drop_all(self.__engine)
 
     def all(self, cls=None):
-        """Queries on the current database session all objects of the given class.
+        """Queries on the current database session all objects
+           of the given class.
         Return:
-            Dictionary of queried classes in the format <class name>.<obj id> = obj.
+            Dictionary of queried classes in the format
+            <class name>.<obj id> = obj.
         """
         if cls is None:
             objs = self.__session.query(State).all()
@@ -70,9 +72,9 @@ class DBStorage:
     def reload(self):
         """Creates all tables in the database and initializes a new session."""
         Base.metadata.create_all(self.__engine)
-        session = sessionmaker(bind=self.__engine,
+        session_created = sessionmaker(bind=self.__engine,
                                        expire_on_commit=False)
-        Session = scoped_session(session)
+        Session = scoped_session(session_created)
         self.__session = Session()
 
     def close(self):
